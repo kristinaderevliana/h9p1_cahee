@@ -12,16 +12,19 @@ body {
 /* Header */
 
 .header {
+  width: 100%;
   position: absolute;
-  max-height: 147px;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  height: 147px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header__container {
-  padding: 63px 0;
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
@@ -30,18 +33,7 @@ body {
 .header__inner {
   display: flex;
   justify-content: space-between;
-}
-
-.header__logo {
-  transform: translateY(-50%);
-  top: 50%;
-}
-
-.logo__link {
-  font-family: "Pacifico", cursive;
-  font-size: 50px;
-  text-decoration: none;
-  color: #000;
+  align-items: center;
 }
 
 /* Navigation */
@@ -94,12 +86,14 @@ body {
 }
 
 .intro__inner {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 250px;
   width: 370px;
-  transform: translateY(80%);
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 .intro__title {
@@ -126,8 +120,8 @@ body {
   font-size: 20px;
   font-weight: 300;
   color: #fff;
-  text-decoration: none;
-  padding: 20px 25px;
+  border: 0;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -135,11 +129,13 @@ body {
   transition: 0.2s ease-in;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 .block__inner__btn {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100px;
 }
 
 /* Scroll */
@@ -172,37 +168,32 @@ body {
   justify-content: center;
   width: 100%;
   height: 865px;
-  margin: 0 auto;
   background-color: #b07cf7;
 }
 
-.block__container {
-  width: 1170px;
-  margin: 0 auto;
-}
-
 .block__inner__about-us {
+  width: 1170px;
   display: flex;
-  justify-content: center;
 }
 
 .block__inner__title {
-  display: block;
-  width: 1170px;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1170px;
 }
 
 .block__image {
-  width: 615px;
-  height: 605px;
-  margin: 13px 0;
+  width: 600px;
+  display: flex;
+  justify-content: center;
 }
 
 .main__section__container {
   display: flex;
   justify-content: space-between;
   width: 1170px;
-  margin: 65px 0 70px 0;
+  margin: 0 0 70px 0;
 }
 
 .block__section_bg_1 {
@@ -263,38 +254,57 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 310px;
-  height: 250px;
-  padding: 20px;
+  width: 370px;
+  height: 310px;
+  padding: 25px;
 }
 
 .block__info {
-  width: 335px;
-  height: 260px;
   color: #fff;
 }
 
-.date__container {
-  width: 45px;
-  height: 45px;
+.info__date {
   position: relative;
-  transform: translate(7px, -9px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.date__container {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Block text */
 
 .block__text_1 {
   display: flex;
-  flex-direction: column;
-  margin: auto 15px auto 85px;
-  width: 500px;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  max-width: 500px;
   height: 300px;
 }
 
 .block__text_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 575px;
-  display: block;
-  margin: 0 auto;
+  height: 328px;
 }
 
 .block__title {
@@ -305,7 +315,7 @@ body {
 
 .block__title_2 {
   text-align: center;
-  margin: 90px 0 35px 0;
+  margin-bottom: 35px;
 }
 
 .block__subtitle {
@@ -324,44 +334,30 @@ body {
   text-decoration: none;
 }
 
-.info__date {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  vertical-align: middle;
-  font-weight: 700;
-  text-align: center;
-  width: 60px;
-  height: 60px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  margin: 10px 0 0 15px;
-}
-
 .info__date_day {
   font-size: 32px;
-  height: 33px;
 }
 
 .info__date_month {
   font-size: 21px;
+  line-height: 1.2;
 }
 
 .info__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 310px;
-  height: 60px;
-  padding-left: 10px;
+  height: 85px;
   text-shadow: 3px 2px 4px #000;
 }
 
 .info__title_1 {
   font-size: 20px;
   font-weight: 700;
-  margin-top: 25px;
 }
 
 .info__subtitle_1 {
   font-size: 13px;
   font-weight: 300;
-  margin-top: 25px;
 }
